@@ -1,14 +1,14 @@
 import { Request, Response } from "express";
-import { CreateUserUseCase } from "./CreateUserUseCase";
+import { CreateMovieUseCase } from "./CreateMovieUseCase";
 
-export class CreateUserController {
-  constructor(private createuserUseCase: CreateUserUseCase) {}
+export class CreateMovieController {
+  constructor(private createmovieUseCase: CreateMovieUseCase) {}
 
   async handle(request: Request, response: Response): Promise<Response> {
-    const { name, email, password } = request.body;
+    const { title, duration, release_date } = request.body;
 
     try {
-      await this.createuserUseCase.execute({ name, email, password });
+      await this.createmovieUseCase.execute({ title, duration, release_date });
 
       return response.status(201).send();
     } catch (error: any) {

@@ -19,17 +19,17 @@ export class CreateUserUseCase {
     const user = new User(data);
     await this.usersRepository.save(user);
 
-    await this.mailProvider.sendMail({
-      to: {
-        name: data.name,
-        email: data.email,
-      },
-      from: {
-        name: 'Equipe do meu app',
-        email: 'equipe@meuapp.com'
-      },
-      subject: 'Seja bem-vindo à plataforma',
-      body: '<p>Você já pode fazer login em nossa plataforma.</p>'
-    });
+    // await this.mailProvider.sendMail({
+    //   to: {
+    //     name: data.name,
+    //     email: data.email,
+    //   },
+    //   from: {
+    //     name: 'Equipe do meu app',
+    //     email: 'equipe@meuapp.com'
+    //   },
+    //   subject: 'Seja bem-vindo à plataforma',
+    //   body: '<p>Você já pode fazer login em nossa plataforma.</p>'
+    // });
   }
 }
