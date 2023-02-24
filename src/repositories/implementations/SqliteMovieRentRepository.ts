@@ -2,7 +2,7 @@ import { MovieRent } from "../../entities/MovieRent";
 import { prisma } from "../../prisma/client";
 import { IMoviesRentsRepository } from "../IMoviesRentsRepository";
 
-export class PostgresMoviesRentsRepository implements IMoviesRentsRepository {
+export class SqliteMoviesRentsRepository implements IMoviesRentsRepository {
   async findFirstByMovieId(movieId: string): Promise<MovieRent|null> {
     const movieRent = await prisma.movieRent.findFirst({
       where: {

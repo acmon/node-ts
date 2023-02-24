@@ -1,8 +1,8 @@
-import { PostgresUsersRepository } from "../../repositories/implementations/SqliteUsersRepository";
+import { SqliteUsersRepository } from "../../repositories/implementations/SqliteUsersRepository";
 import { GetAllUsersUseCase } from "./GetAllUsersUseCase";
 import { GetAllUsersController } from "./GetAllUsersController";
 
-const sqliteUsersRepository = new PostgresUsersRepository();
+const sqliteUsersRepository = new SqliteUsersRepository();
 
 const getallUsersUseCase = new GetAllUsersUseCase(
   sqliteUsersRepository

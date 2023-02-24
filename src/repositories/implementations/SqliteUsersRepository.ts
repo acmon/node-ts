@@ -2,7 +2,7 @@ import { User } from "../../entities/User";
 import { prisma } from "../../prisma/client";
 import { IUsersRepository } from "../IUsersRepository";
 
-export class PostgresUsersRepository implements IUsersRepository {
+export class SqliteUsersRepository implements IUsersRepository {
   async getAll(): Promise<User[]|null> {
     const users = await prisma.user.findMany({
       include: {

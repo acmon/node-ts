@@ -1,11 +1,11 @@
-import { PostgresMoviesRepository } from "../../repositories/implementations/SqliteMoviesRepository";
+import { SqliteMoviesRepository } from "../../repositories/implementations/SqliteMoviesRepository";
 import { GetMoviesByReleaseDateUseCase } from "./GetMoviesByReleaseDateUseCase";
 import { GetMoviesByReleaseDateController } from "./GetMoviesByReleaseDateController";
 
-const postgresMoviesRepository = new PostgresMoviesRepository();
+const sqliteMoviesRepository = new SqliteMoviesRepository();
 
 const getmoviesByReleaseDateUseCase = new GetMoviesByReleaseDateUseCase(
-  postgresMoviesRepository
+  sqliteMoviesRepository
 );
 
 const getMoviesByReleaseDateController = new GetMoviesByReleaseDateController(

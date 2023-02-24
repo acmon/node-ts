@@ -1,10 +1,10 @@
-import { PostgresMoviesRepository } from "../../repositories/implementations/SqliteMoviesRepository";
+import { SqliteMoviesRepository } from "../../repositories/implementations/SqliteMoviesRepository";
 import { CreateMovieController } from "./CreateMovieController";
 import { CreateMovieUseCase } from "./CreateMovieUseCase";
 
-const postgresMoviesRepository = new PostgresMoviesRepository();
+const sqliteMoviesRepository = new SqliteMoviesRepository();
 
-const createmovieUseCase = new CreateMovieUseCase(postgresMoviesRepository);
+const createmovieUseCase = new CreateMovieUseCase(sqliteMoviesRepository);
 
 const createMovieController = new CreateMovieController(createmovieUseCase);
 
